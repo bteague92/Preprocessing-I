@@ -1,59 +1,279 @@
+// variables
+
+@cadet: cadetBlue; //Cadet Blue
+@twoREM: 2rem;
+@font: "Patua One", cursive;
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
+.container {
+  margin: 0 6%;
+  height: 100%;
+}
+
+.displayFlex {
+  display: flex;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navBar {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+
+  a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.topSection {
+  height: 400px;
+  background: @cadet;
+  .flexColumn();
+  justify-content: flex-end;
+  color: white;
+
+  .insideTop {
+    padding: 0 5%;
+    padding-bottom: 3%;
+  }
+
+  .name {
+    font-size: 3rem;
+    font-family: @font;
+  }
+  .subName {
+    font-size: @twoREM;
+    padding-bottom: 4%;
+  }
+  .subNameText {
+    font-size: 1.5rem;
+    padding-bottom: 2%;
+  }
+
+  .contactButton {
+    width: 12rem;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+.about {
+  display: flex;
+  margin: 35px 0 35px 0;
+  line-height: 1.7;
+  .moreAbout {
+    width: 50%;
+    padding-right: 50px;
+    h3 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+  .skills {
+    .displayFlex();
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+    h2 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1.4rem;
+      border: 1px solid grey;
+      padding-left: 10px;
+    }
+  }
+  @media (max-width: 500px) {
+    .flexColumn();
+  }
+}
+
+.workHistory {
+  padding: 25px 0 25px 0;
+  .topWork {
+  }
+  .rows {
+    .flexColumn();
+  }
+  .row {
+    font-size: 1.6rem;
+    .displayFlex();
+    justify-content: space-between;
+    line-height: 1.5;
+    h3 {
+    }
+  }
+}
+
+.contact {
+  font-size: 1.3rem;
+  margin: 20px 0;
+  .contactHeader {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: black;
+  color: white;
+  height: 85px;
+  margin-top: 45px;
+}
